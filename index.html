@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>dice roller</title>
+</head>
+<style>
+    .dice-roller-container{
+        background-color: rgb(240, 203, 209);
+        width: 180px;
+        display:block;
+       margin-top: 150px;
+        margin-left: 550px;
+        border: 2px ridge rgb(83, 81, 81) ;
+        padding: 20px;
+        border-radius:20px ;
+     }
+
+    .dice-roller-container:hover{
+        box-shadow: 2px 3px 4px 2px rgb(83, 84, 85);
+    }
+
+    .dice{
+height: 100px ;
+margin:10px auto;
+display: block;
+    }
+
+.dice:hover{
+    box-shadow: 2px 3px 4px 2px whitesmoke;
+}
+
+    .dice-text{
+text-align: center;
+    }
+    
+    .btn-roll{
+background-color: darkcyan ;
+display: block;
+color: whitesmoke ;
+border:3px solid black ;
+padding:7px 10px ;
+margin:20px auto ;
+border-radius: 20px;
+
+    }
+.btn-roll:hover{
+box-shadow:3px 3px 4px 3px ;
+}
+body{
+    background: url(./photo.jpg) no-repeat;
+    background-size: cover;
+    }
+
+
+</style>
+<body>
+    
+    <div class="dice-roller-container">
+        <img src="./one.png " class="dice" id="dice" />
+        <h2 class="dice-text" id="dice-text"> 1</h2>
+<button class=" btn-roll" onclick="roll()">Roll </button>
+    </div>
+
+    <script>
+        function roll()
+        {
+            const min = 1;
+        const max = 6;
+        const number = Math.floor (Math.random() * (max - min + 1)) + min;
+        document.getElementById("dice-text").innerHTML = number;
+        const diceImg = document.getElementById("dice");
+
+        if(number == 1)
+        {
+            diceImg.src ="./one.png ";
+        }
+        else if(number == 2)
+        {
+            diceImg.src ="./two.png ";
+        }
+        else if(number == 3)
+        {
+            diceImg.src ="./three.png ";
+        }
+        else if(number == 4)
+        {
+            diceImg.src ="./four.png ";
+        }
+        else if(number == 5)
+        {
+            diceImg.src ="./five.png ";
+        }
+        else if(number == 6) 
+        {
+            diceImg.src ="./six.png ";
+        }
+        }
+    </script>
+</body>
+</html>
+
